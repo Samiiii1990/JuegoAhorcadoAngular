@@ -34,9 +34,10 @@
         </div>
         <div class="input-container">
           <form>
-            <label for="letra">Ingresá una letra</label>
+            <label *ngIf="!juegoFinalizado" for="letra">Ingresá una letra</label>
             <br />
             <input
+            *ngIf="!juegoFinalizado"
               class="input-style"
               type="text"
               name="letra"
@@ -44,7 +45,7 @@
               [(ngModel)]="letra"
               onkeydown="return /[a-z]/i.test(event.key)"
             />
-            <input class="input-button" type="submit"  value="   "(click)="elegirLetra()" />
+            <input *ngIf="!juegoFinalizado" class="input-button" type="submit"  value="   "(click)="elegirLetra()" />
             
           </form>
         </div>

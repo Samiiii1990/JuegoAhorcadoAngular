@@ -28,6 +28,7 @@ export class HangmanComponent {
       .getConexion()
       .then(() => {
         console.log("conexion exitosa!");
+        this.onSelected("fruta")
       })
       .catch((err) => {
         console.log(err);
